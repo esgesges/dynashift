@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="root">
+        <div id="left-panel">
+            <div id="choices-container">
+                <input type="range" min="0" max="100" step="50" value="50" class="slider" id="slider"
+                    orient="vertical">
+                <div id="modes">
+                    <h1 style="margin: 0px;"> - TURBO</h1>
+                    <h1 style="margin: 0px;"> - DEFAULT</h1>
+                    <h1 style="margin: 0px;"> - ECO</h1>
+                </div>
+            </div>
+            <div id="power-button">
+                <img src="power-button.png" alt="Power" id="power-button-image">
+                <h1 id="power-button-text">ready</h1>
+            </div>
+        </div>
+        <div id="right-panel">
+            <div id="right-panel-content">
+                <div class="info-block">
+                    <div class="icon-placeholder"></div>
+                    <h1 id="speedValue">speed -</h1>
+                </div>
+                <canvas id="myChart"></canvas>
+                <div class="info-block">
+                    <div class="icon-placeholder"></div>
+                    <h1 id="angleValue">angle -</h1>
+                </div>
+                <div class="info-block">
+                    <div class="icon-placeholder"></div>
+                    <h1 id="pressureValue">pressure -</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

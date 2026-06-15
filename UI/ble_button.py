@@ -4,7 +4,7 @@ from bleak import BleakClient
 
 # ======== CONFIGURAZIONE ========
 ADDRESS = "E0:8C:FE:2F:55:E6"  # indirizzo MAC del tuo ESP32
-CHAR_UUID = "abcdef01-1234-5678-1234-56789abcdef0"  # UUID della caratteristica
+CHAR_UUID = "6e400001-b5a3-f393-e0a9-e50e24dcca9e"  # UUID della caratteristica
 WS_URI = "ws://localhost:8765"  # indirizzo del server WebSocket
 
 # riferimento globale alla connessione WebSocket

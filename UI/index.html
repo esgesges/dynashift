@@ -1,43 +1,57 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/5.3.4/mqtt.min.js"></script>
-    <script src="script.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <title>Dynashift</title>
 </head>
-
 <body>
-    <div id="root">
+    <header>
+        <h1>Dynashift</h1>
+    </header>
+    <div class="root">
         <div id="left-panel">
-            <div id="choices-container">
-                <input type="range" min="0" max="100" step="50" value="50" class="slider" id="myRange"
-                    orient="vertical">
-                <div id="modes">
-                    <h1 style="margin: 0px;"> - TURBO</h1>
-                    <h1 style="margin: 0px;"> - DEFAULT</h1>
-                    <h1 style="margin: 0px;"> - ECO</h1>
-                </div>
+            <div>
+                <h1>SPORT</h1>
+                <p>mode</p>
             </div>
-            <div id="power-button">
-                <img src="power-button.png" alt="Power">
-                <h1>Dynashift is ready</h1>
+            <div>
+                <p>Dynashift is</p>
+                <img src="offswitch.png" id="powerImage">
             </div>
         </div>
         <div id="right-panel">
-            <div id="right-panel-content">
-                <div class="info-block">
-                    <div class="icon-placeholder"></div>
-                    <h1>speed -</h1>
-                </div>
-                <div class="info-block">
-                    <div class="icon-placeholder"></div>
-                    <h1>angle -</h1>
-                </div>
-                <div class="info-block">
-                    <div class="icon-placeholder"></div>
-                    <h1>pressure -</h1>
-                </div>
-            </div>
+            <table>
+                <tr>
+                    <th>
+                        <div>
+                            <p id="speedValue" style="padding-bottom: 60px;">Speed</p>
+                            <p id="timeValue">Time</p>
+                        </div>
+                    </th>
+                    <th>
+                        <canvas id="graph1"></canvas>
+
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <canvas id="graph2"></canvas>
+
+                    </th>
+                    <th>
+                        <div>
+                            <p id="angleValue" style="padding-bottom: 60px;"> angle</p>
+                            <p id="pressureValue">pressure</p>
+                        </div>
+                    </th>
+                </tr>
+            </table>
         </div>
     </div>
 </body>
+</html>
