@@ -1,0 +1,43 @@
+.ctrl-card { gap: 8px; padding: 10px 8px; }
+
+/* ── power block ── grande e prominente */
+.pwr-block {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px; padding: 12px 0; flex-shrink: 0;
+  background: #0d0d18; border: 1px solid #1e1e2a; border-radius: 10px;
+}
+.pwr-svg  { width: 68px; height: 68px; }
+.pwr-ring { fill: none; stroke-width: 5.5; stroke-linecap: round; transition: stroke 0.35s; }
+.pwr-line { stroke-width: 5.5; stroke-linecap: round; transition: stroke 0.35s; }
+.pwr-label { font-size: 0.85rem; font-weight: 900; letter-spacing: 0.14em; transition: color 0.35s; }
+
+.on  .pwr-ring, .on  .pwr-line { stroke: #00ff88; filter: drop-shadow(0 0 8px #00ff8899); }
+.on  .pwr-label { color: #00ff88; text-shadow: 0 0 10px #00ff8866; }
+.off .pwr-ring, .off .pwr-line { stroke: #252535; }
+.off .pwr-label { color: #2a2a3a; }
+
+.ctrl-divider { height: 1px; background: var(--border); flex-shrink: 0; }
+
+/* ── bottoni modalità ── stacked, touch-sized */
+.mode-stack { display: flex; flex-direction: column; gap: 5px; flex: 1; min-height: 0; }
+
+.modesel-btn {
+  flex: 1; min-height: 44px;
+  border: 2px solid #1e1e2a;
+  border-radius: 10px;
+  background: #0d0d18;
+  color: #444;
+  font-weight: 800; font-size: 0.85rem; letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.modesel-btn:active { transform: scale(0.96); }
+.modesel-btn.active {
+  border-color: var(--mc);
+  color: var(--mc);
+  background: color-mix(in srgb, var(--mc) 14%, #0a0a18);
+  box-shadow: inset 0 0 14px color-mix(in srgb, var(--mc) 18%, transparent),
+              0 0 8px color-mix(in srgb, var(--mc) 22%, transparent);
+}

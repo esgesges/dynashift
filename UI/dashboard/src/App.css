@@ -1,0 +1,78 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #0a0a0f;
+  --surface: #111118;
+  --border:  #1e1e2a;
+  --text:    #dde;
+  --hdr:     48px;
+  --gap:     7px;
+  --pad:     7px;
+}
+
+html, body, #root { height: 100%; overflow: hidden; background: var(--bg); }
+body { color: var(--text); font-family: 'Inter', system-ui, sans-serif; font-size: 13px; }
+
+.app { display: flex; flex-direction: column; height: 100vh; }
+
+/*
+  Col1(1fr)  Col2(1fr)  Col3(1fr)  Col4(155px)
+  graph1     graph2     model      conn
+  heat       actctrl    data       ctrl
+*/
+.grid {
+  flex: 1; min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 155px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "graph1  graph2  model  conn"
+    "heat    actctrl data   ctrl";
+  gap: var(--gap);
+  padding: var(--pad);
+}
+
+.area-graph1  { grid-area: graph1;  display: flex; flex-direction: column; min-height: 0; }
+.area-graph2  { grid-area: graph2;  display: flex; flex-direction: column; min-height: 0; }
+.area-model   { grid-area: model;   display: flex; flex-direction: column; min-height: 0; }
+.area-conn    { grid-area: conn;    display: flex; flex-direction: column; min-height: 0; }
+.area-heat    { grid-area: heat;    display: flex; flex-direction: column; min-height: 0; }
+.area-actctrl { grid-area: actctrl; display: flex; flex-direction: column; min-height: 0; }
+.area-data    { grid-area: data;    display: flex; flex-direction: column; min-height: 0; }
+.area-ctrl    { grid-area: ctrl;    display: flex; flex-direction: column; min-height: 0; }
+
+/* ogni area → card che la riempie */
+[class^="area-"] > .panel-card { flex: 1; min-height: 0; }
+
+/* ── panel card ── */
+.panel-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: flex; flex-direction: column;
+  min-height: 0; overflow: hidden;
+}
+.panel-card h3 {
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em;
+  color: #555; text-transform: uppercase; margin-bottom: 6px; flex-shrink: 0;
+}
+
+/* chart helpers */
+.chart-header {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 4px; flex-shrink: 0;
+}
+.chart-fill { flex: 1; min-height: 0; }
+.live-value { font-size: 0.85rem; font-weight: 700; color: #ccd; }
+.live-value small { font-size: 0.6rem; color: #555; }
+
+/* spoiler */
+.spoiler-card   { padding: 6px 8px; }
+.spoiler-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; flex-shrink: 0; }
+.panel-label    { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; color: #555; text-transform: uppercase; }
+.act-legend     { font-size: 0.6rem; color: #555; }
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); }
