@@ -1,0 +1,36 @@
+.topbar {
+  height: var(--hdr); flex-shrink: 0;
+  display: flex; align-items: center; gap: 12px;
+  padding: 0 16px;
+  background: #0d0d14; border-bottom: 1px solid var(--border);
+}
+.logo     { font-size: 1.05rem; font-weight: 900; letter-spacing: 0.2em; color: #4488ff; text-shadow: 0 0 14px #4488ff44; }
+.logo-sub { font-size: 0.58rem; color: #333; letter-spacing: 0.08em; }
+.topbar-speed { margin-left: auto; display: flex; align-items: baseline; gap: 5px; }
+.spd-val  { font-size: 1.6rem; font-weight: 900; color: #fff; font-variant-numeric: tabular-nums; }
+.spd-unit { font-size: 0.7rem; color: #555; }
+
+/* New nav button styles */
+.topbar-nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.topbar-btn {
+  padding: 6px 12px;
+  background: #1e1e2a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #dde;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.topbar-btn:hover {
+  background: #2a2a3a;
+}
+.topbar-btn.active {
+  background: #4488ff;
+  color: #fff;
+  border-color: #4488ff;
+}

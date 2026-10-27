@@ -1,0 +1,26 @@
+.conn-card { flex-shrink: 0; gap: 6px; }
+
+.conn-rows { display: flex; flex-direction: column; gap: 2px; }
+.conn-row  {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 6px; border-radius: 6px; background: #0d0d14;
+}
+.conn-dot  { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.conn-dot.green { background: #00ff88; box-shadow: 0 0 5px #00ff8888; }
+.conn-dot.red   { background: #ff4444; box-shadow: 0 0 5px #ff444488; }
+.conn-label { flex: 1; font-size: 0.75rem; color: #aaa; }
+.conn-state { font-size: 0.68rem; font-weight: 700; font-family: monospace; }
+.conn-state.ok  { color: #00cc66; }
+.conn-state.err { color: #666; }
+
+.gyro-badge {
+  font-size: 0.72rem; font-weight: 700;
+  padding: 5px 10px; border-radius: 6px; text-align: center;
+}
+.gyro-badge.ok   { background: #002a18; color: #00cc66; border: 1px solid #004422; }
+.gyro-badge.warn { background: #2a1800; color: #ffaa00; border: 1px solid #443300; }
+
+.gyro-xyz {
+  display: flex; justify-content: space-between;
+  font-size: 0.68rem; color: #444; font-family: monospace; padding: 0 2px;
+}

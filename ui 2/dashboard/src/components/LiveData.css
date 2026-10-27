@@ -1,0 +1,47 @@
+.livedata-card { gap: 6px; }
+
+.ld-row-top { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; flex-shrink: 0; }
+
+/* tile generica */
+.ld-tile {
+  background: #0d0d18;
+  border: 1px solid #1e1e2a;
+  border-left: 3px solid var(--ta, #4488ff);
+  border-radius: 7px;
+  padding: 7px 10px;
+  display: flex; flex-direction: column; gap: 5px;
+  flex-shrink: 0;
+}
+.ld-tile-label {
+  font-size: 0.6rem; color: #555; text-transform: uppercase; letter-spacing: 0.08em;
+}
+
+/* numero grande velocità / sterzo */
+.ld-bignum {
+  font-size: 1.9rem; font-weight: 900;
+  font-variant-numeric: tabular-nums; line-height: 1;
+}
+.ld-bignum small { font-size: 0.38em; color: #666; margin-left: 3px; font-weight: 600; }
+
+/* gyro */
+.ld-gyro-vals { display: flex; gap: 0; }
+.ld-gyro-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 4px 0; }
+.ld-gyro-ax   { font-size: 0.6rem; color: #444; font-weight: 700; text-transform: uppercase; }
+.ld-gyro-num  { font-size: 0.88rem; font-weight: 700; color: #aaa; font-family: monospace; }
+
+/* pressione 4 attuatori */
+.ld-act-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 4px; }
+.ld-act-cell { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.ld-act-key  { font-size: 0.62rem; font-weight: 800; font-family: monospace; }
+.ld-act-num  { font-size: 0.92rem; font-weight: 700; color: #ccd; font-variant-numeric: tabular-nums; }
+.ld-act-num small { font-size: 0.55em; color: #555; }
+
+/* posizione / barre */
+.ld-pos-grid { display: flex; flex-direction: column; gap: 5px; }
+.ld-pos-item { display: flex; align-items: center; gap: 8px; }
+.ld-bar-wrap {
+  flex: 1; height: 8px; background: #151525; border-radius: 4px; overflow: hidden;
+}
+.ld-bar-fill { height: 100%; border-radius: 4px; transition: width 0.15s ease-out; }
+.ld-pos-num  { font-size: 0.72rem; font-weight: 700; color: #888; font-family: monospace; width: 30px; text-align: right; }
+.ld-pos-num small { font-size: 0.7em; color: #555; }

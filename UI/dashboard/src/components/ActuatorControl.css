@@ -1,0 +1,70 @@
+.act-card { gap: 6px; }
+
+.act-toprow {
+  display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;
+}
+.act-toprow h3 { margin-bottom: 0; }
+
+/* ── toggle switch ── */
+.toggle-switch {
+  display: flex; align-items: center; gap: 8px; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.toggle-switch input { display: none; }
+.toggle-track {
+  width: 38px; height: 22px; background: #1a1a2a; border: 1.5px solid #333;
+  border-radius: 11px; position: relative; transition: background 0.2s;
+  flex-shrink: 0;
+}
+.toggle-thumb {
+  width: 16px; height: 16px; background: #444; border-radius: 50%;
+  position: absolute; top: 2px; left: 2px;
+  transition: left 0.2s, background 0.2s;
+}
+.toggle-switch input:checked ~ .toggle-track { background: #331010; border-color: #ff4444; }
+.toggle-switch input:checked ~ .toggle-track .toggle-thumb { left: 18px; background: #ff4444; }
+.toggle-label { font-size: 0.72rem; color: #666; }
+
+/* ── 4 barre verticali ── */
+.act-bars {
+  flex: 1; min-height: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 6px; align-items: stretch;
+}
+.act-col {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.act-pct { font-size: 0.7rem; font-weight: 700; color: #ccc; font-family: monospace; flex-shrink: 0; }
+.act-pct small { font-size: 0.55rem; color: #666; }
+
+.act-bar-wrap {
+  flex: 1; min-height: 0; width: 28px;
+  background: #151520; border: 1px solid #252535; border-radius: 4px;
+  display: flex; flex-direction: column-reverse;
+  position: relative; overflow: visible;
+}
+.act-bar-fill {
+  background: linear-gradient(to top, #ff3333, #ffaa00);
+  transition: height 0.12s ease-out; border-radius: 3px;
+}
+.act-limit-mark {
+  position: absolute; left: -3px; right: -3px; height: 2px;
+  background: #4488ff; border-radius: 1px; pointer-events: none;
+}
+.act-lbl { font-size: 0.68rem; color: #555; font-family: monospace; flex-shrink: 0; }
+
+/* ── sliders override e limiti ── */
+.act-sliders, .act-limits { flex-shrink: 0; }
+.sliders-title { font-size: 0.62rem; color: #444; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 3px; }
+
+.slider-row {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.7rem; color: #777; font-family: monospace; margin-bottom: 4px;
+}
+.slider-row span:first-child { width: 20px; flex-shrink: 0; }
+.slider-row span:last-child  { width: 30px; text-align: right; flex-shrink: 0; }
+.slider-row input[type=range] {
+  flex: 1; accent-color: #4488ff;
+  height: 20px;        /* area touch più grande */
+  cursor: pointer;
+}
